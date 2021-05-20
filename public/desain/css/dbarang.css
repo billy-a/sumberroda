@@ -1,0 +1,39 @@
+.gbr {
+  width: 50%;
+  margin: auto;
+}
+
+.gbr-item {
+  object-fit: cover;
+  width: 100%;
+}
+
+.gbr-detail {
+  width: 100%;
+  display: inline-block;
+}
+
+.namabrg {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.hargabrg {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.qty {
+  max-width: 25%;
+}
+
+@media screen and (max-width: 768px) {
+  .qty {
+    max-width: 50%!important;
+  }
+
+  .gbr {
+    width: 70%;
+    margin: auto;
+  }
+}

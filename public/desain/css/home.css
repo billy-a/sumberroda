@@ -1,0 +1,30 @@
+.gambarbrg {
+  width: 100%;
+}
+
+.itembrg p {
+  text-align: center;
+}
+
+.isikategori button{
+  min-width: 100px;
+}
+
+.itemb {
+  text-decoration: none;
+  color:black;
+
+}
+
+.itemb:hover {
+  color:black;
+}
+
+.kotakzoom {
+  transition: all .2s ease-in-out;
+}
+
+.kotakzoom:hover{  
+  transform: scale(1.1); 
+  z-index: 3;
+}

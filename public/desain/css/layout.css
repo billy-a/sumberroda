@@ -1,0 +1,91 @@
+@media screen and (min-width: 768px) {
+  .mmenubar {
+    position: fixed;
+    z-index: 9;
+    max-width: 768px;
+    margin: auto;
+  }
+} 
+
+@media screen and (max-width: 768px) {
+  .bcontainer {
+    padding-left: 1rem!important;
+    padding-right: 1rem!important;
+  }
+}
+
+body {
+  background-color: rgb(236, 236, 236);
+  margin: 0;
+  padding: 0 0 90px 0;
+}
+
+p{
+  margin: 0;
+  padding: 0;
+}
+
+.fs-13 {
+  font-size: 14px!important;
+}
+
+.fw-13 {
+  font-weight: 500;
+}
+
+.bcontainer {
+  max-width: 768px;
+  margin: auto;
+}
+
+.mmenubar {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  z-index: 999;
+  height: 59px;
+  justify-content: center;
+  align-items: center;
+}
+
+.mmenubartab {
+  flex: 25%;
+}
+
+.btn-mmenubar {
+  color: rgb(167, 167, 167);
+}
+
+.active-mmenubar {
+  color: #198754!important;
+}
+
+.bheader{
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bheader h5 {
+  display: inline-block;
+}
+
+.bheader a {
+  text-decoration: none;
+  color: black;
+}
+
+.bheader-logo {
+  float: left;
+  width: 50%;
+}
+
+.bheader-cari {
+  float: right;
+  width: 50%; 
+}

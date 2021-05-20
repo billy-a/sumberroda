@@ -1,0 +1,39 @@
+.brg-k {
+  height: 100px;
+}
+
+.qty-k {
+  width: 60px!important;
+}
+
+.btn-qty-k {
+  width: 30px!important;
+}
+
+body {
+  padding: 0 0 160px 0;
+}
+
+.mmenubarx {
+  box-shadow: 0 -10px 15px -10px rgba(0,0,0,0.3);
+  bottom: 59px;
+  right: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  z-index: 999;
+  height: 59px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .mmenubarx {
+    position: fixed;
+    z-index: 9;
+    max-width: 768px;
+    margin: auto;
+  }
+} 
