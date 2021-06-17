@@ -10,11 +10,14 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
-    
     <title>@yield('judulweb')</title>
   </head>
   <body>
-    @include('v_layout.v_nav')     
+    <div class="bcontainer">
+      @include('v_layout.v_nav')     
+    
+      @yield('content')
+    </div>
   </body>
 
 </html>

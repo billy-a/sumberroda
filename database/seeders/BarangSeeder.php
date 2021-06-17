@@ -30,7 +30,8 @@ class BarangSeeder extends Seeder
     			'stok' => $faker->numberBetween(80,90), 
     			'hargabeli' => $faker->numberBetween(200000,300000),
     			'hargajual' => $faker->numberBetween(300001,400001),                
-    			'hargajasa' => $faker->numberBetween(50000,100000)
+    			'hargajasa' => $faker->numberBetween(50000,100000),
+					'gambar' => 'image.png'
     		]);
  
     	}

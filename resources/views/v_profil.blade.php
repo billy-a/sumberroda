@@ -15,15 +15,18 @@
         <div class="card-body">
             <div class="text-center">
                 <img src="{{asset('assets/image.png')}}" alt="" width="100" height="100" class="rounded-circle">
-                <H5 class="mt-3">USERNAME</H5>
+                <H5 class="mt-3">{{ Auth::user()->name }}</H5>
             </div>
             <div class="text-center fs-13">
-                Email : username@gmail.com
+                Email : {{ Auth::user()->email }}
 
             </div>
         </div>
         <div class="card-footer text-center">
-            <button type="submit" class="btn btn-danger">LOGOUT</button>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-danger">LOGOUT</button>
+            </form>
         </div>
     </div>
 </div>

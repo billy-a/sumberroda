@@ -6,25 +6,6 @@
   text-align: center;
 }
 
-.isikategori button{
+.isikategori a{
   min-width: 100px;
-}
-
-.itemb {
-  text-decoration: none;
-  color:black;
-
-}
-
-.itemb:hover {
-  color:black;
-}
-
-.kotakzoom {
-  transition: all .2s ease-in-out;
-}
-
-.kotakzoom:hover{  
-  transform: scale(1.1); 
-  z-index: 3;
 }

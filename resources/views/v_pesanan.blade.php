@@ -9,53 +9,64 @@
 @endsection
 
 @section('content')
+
+@if (session('pesansukses'))    
+<div class="alert alert-success mt-4 alert-dismissible fade show" role="alert">
+
+  <h4 class="alert-heading">Upload Berhasil!</h4>
+  <p>Bukti pembayaran berhasil diupload dan akan dikonfirmasi dalam 1x24jam</p>
+  <hr>
+  <p>Terima Kasih</p>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+</div>
+@endif
+
 <div class="mt-4">
     <ul class="nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Semua</a>
+          <button class="nav-link heremenu active" aria-current="page" onclick="ajaxpr('0')">Semua</button>          
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Belum Bayar</a>
+          <button class="nav-link heremenu" aria-current="page" onclick="ajaxpr('1')">Belum Bayar</button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Menunggu Konfirmasi</a>
+          <button class="nav-link heremenu" aria-current="page" onclick="ajaxpr('2')">Menunggu Konfirmasi</button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Diterima</a>
+          <button class="nav-link heremenu" aria-current="page" onclick="ajaxpr('3')">Diterima</button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Selesai</a>
+          <button class="nav-link heremenu" aria-current="page" onclick="ajaxpr('4')">Selesai</button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Batal</a>
+          <button class="nav-link heremenu" aria-current="page" onclick="ajaxpr('5')">Batal</button>
         </li>        
     </ul>
 </div>
-<div class="mt-4">
-    <div class="card">
-        <div class="card-body">
-            <div class="card-title">
-                <h5>PESANAN 1010109123219123 (BELUM BAYAR)</h5>
-            </div>
-            <div class="card-text fs-13 border-bottom pb-2">
-                <p>Tanggal Pemesanan : 16 Februari 2021</p>
-                <p>Tanggal Instalasi : 17 Februari 2021</p>
-            </div>
-            <div class="card-text fs-13 pt-2">
-                <div class="row">
-                    <div class="col-6">
-                        GT RADIAL CHAMPIRO ECO 175/65 R14 <span class="badge rounded-pill bg-secondary">x 2 Pcs</span>
-                    </div>
-                    <div class="col-6 text-end">
-                        Rp. 200.000
-                    </div>
-                </div>                
-                
-            </div>
-        </div>
-        <div class="card-footer text-end">
-            <h5>TOTAL Rp. 200.000</h5>
-        </div>
-    </div>
+
+<div id="ubahisi">
+  
 </div>
+
+<script>
+$(document).ready(function(){
+  ajaxpr('0');
+
+  $('.heremenu').on('click',function(){
+    $('.heremenu').removeClass('active');
+    $(this).addClass('active');
+  });
+});
+
+function ajaxpr(status){
+    $.ajax({
+        url:"pesanan/proses?status="+status,
+        success:function(data)
+        {            
+          $('#ubahisi').html(data);
+        }
+    });
+}
+</script>
 @endsection

@@ -19,3 +19,9 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^sumberroda\.my\.id$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.sumberroda\.my\.id$
+RewriteRule ^/?$ "https\:\/\/sumberroda\.my\.id\/" [R=301,L]
+

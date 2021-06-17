@@ -27,6 +27,7 @@ class Tblbarang extends Migration
             $table->bigInteger('hargabeli');
             $table->bigInteger('hargajual');
             $table->bigInteger('hargajasa');
+            $table->string('gambar')->default('image.png');
             $table->timestamps();
         });
     }

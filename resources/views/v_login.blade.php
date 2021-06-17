@@ -10,32 +10,47 @@
     
     <title>Sumber Roda - Login</title>
   </head>
-  <body>      
+  <body class="p-0">      
     <div class="badan-login mx-auto d-flex align-content-center flex-wrap p-3">
       <div class="w-100">
         <a class="judultoko text-center" href="{{ url("/") }}"><h3><text class="text-success">SUMBER</text> RODA</h3></a>
       </div>
-      <div class="card mt-2">
+      <div class="card mt-2 w-100">
         <div class="card-body">
-          <h5 class="card-title text-center border-bottom pb-3">LOGIN</h5>
-          <div>
-            <form class="row g-3">
-              <div class="col-md-12">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
-              </div>
-              <div class="col-md-12">
-                <label for="inputPassword4" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-              <div class="col-12 d-grid">
-                <button type="submit" class="btn btn-success">LOGIN</button>
-              </div>
-            </form>
-          </div>
+          <form method="POST" action="{{ route('login') }}">
+            @csrf
+            <h5 class="card-title text-center border-bottom pb-3">LOGIN</h5>
+            <div>
+              <form class="row g-3">
+                <div class="col-md-12">
+                  <label for="email" class="form-label">Email</label>
+                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                  @error('email')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
+                </div>
+                <div class="col-md-12">
+                  <label for="password" class="form-label">Password</label>
+                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                  @error('password')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
+                </div>
+                <div class="col-12 d-grid mt-4">
+                  <button type="submit" class="btn btn-success">LOGIN</button>
+                </div>
+              </form>
+            </div>
+          </form>
         </div>
         <div class="card-footer text-center">
-          Belum punya akun ? <a href="#">Daftar Sekarang</a>
+          Belum punya akun ? <a href="{{ route('register') }}">Daftar Sekarang</a>
         </div>
       </div>
     </div>  
